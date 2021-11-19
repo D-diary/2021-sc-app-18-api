@@ -1,0 +1,21 @@
+<script src="../js/lodash.min.js"></script>
+
+<script>
+  const users = [
+     { id: 1, username: 'booldook', userpw: '1111' },
+     { id: 2, username: 'hongkd', userpw: '1111' },
+  ];
+
+  function isUser(userid, cb) {
+    setTimeout(function () {
+      // var idx = _.findIndex(users, function(v) { return v.userid === userid });
+      var user = users.filter(function(v) { return v.userid === userid });
+      if(user.length === 0) cb('찾을 수 없습니다.')
+      else cb(null, user);
+    }, 100);
+  }
+
+  isUser('booldook', function (err, r) {
+    console.log(r);
+  });
+</script>

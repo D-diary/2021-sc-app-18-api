@@ -6,7 +6,6 @@ const port = process.env.PORT
 const path = require('path')
 const express = require('express')
 const app = express()
-const jwt = require('jsonwebtoken')
 
 
 /************** view engine ***************/
@@ -25,25 +24,14 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /*************** router init **************/
-const apiRouter = require('./routes/api')
-app.use('/api', apiRouter) // api를 제공해주는 곳
-// app.use('/dev', devRouter) // api를 사용할수 있게 권한을 획득하는 곳
+// const Router = require('./routes/')
 
-app.get('/token', (req, res, next) => {
-  let token = jwt.sign({ 
-  userid: 'booldook',
-  nickname : '불뚝' 
-  }, 
-  process.env.JWT_KEY, {
-    expiresIn: 60 * 60
-  });
-  res.send(token)
-})
+// app.use('/', Router)
 
 
 /**************** error init **************/
-const notFoundRouter = require('./routes/error/404-router')
-const errorRouter = require('./routes/error/500-router')
+const notFoundRouter = require('./routes/error/404')
+const errorRouter = require('./routes/error/500')
 app.use(notFoundRouter)
 app.use(errorRouter)
 

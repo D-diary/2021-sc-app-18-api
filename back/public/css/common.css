@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+/* // font-family: 'Noto Sans KR', sans-serif; */
+
+html, body {font-family: 'Noto Sans KR', sans-serif;}
+
+.wrapper {max-width: 992px; margin: auto; padding: 2em 1em;}
+
+.header-wrapper {background-color: darkslategray; color: #f9f9f9; display: flex; justify-content: space-between;  }
+.header-wrapper h1.logo { font-size: 1.25em; padding: .75em;}
+.header-wrapper .navi-wrap {display: flex;}
+.header-wrapper .navi-wrap .navi {padding: 1em 1,5em;}
+.header-wrapper .navi-wrap .navi:hover {background-color: deepskyblue; color: dimgray;}
+
+.header-wrapper a:link {text-decoration: none; color: inherit;}
+.header-wrapper a:visited {text-decoration: none; color: inherit;}
+.header-wrapper a:hover {text-decoration: none; color: inherit;}
+.header-wrapper a:active {text-decoration: none; color: inherit;}
+
